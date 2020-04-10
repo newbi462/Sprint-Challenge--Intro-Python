@@ -20,37 +20,7 @@ class City():
 # Note that the first line of the CSV is header that describes the fields--this
 # should not be loaded into a City object.
 import csv
-filename = "src/cityreader/cities.csv" # will only run from inside root DIR
 
-# initializing the titles and rows list
-fields = []
-rows = []
-
-with open(filename, 'r') as csvfile:
-    # creating a csv reader object
-    csvreader = csv.reader(csvfile)
-
-    fields = next(csvreader)
-
-    for row in csvreader:
-        rows.append(row)
-
-    #print("Total no. of rows: %d"%(csvreader.line_num))
-
-    #print('Field names are:' + ', '.join(field for field in fields))
-
-    print('\nFirst rows are:\n')
-    for row in rows[:csvreader.line_num]:
-        # parsing each column of a row
-        for col in row:
-            #print("%10s"%col),
-            print("%10s"%col[0])
-        print('\n')
-        print(rows[0][0]) # city name
-        # lat print(rows[0][3])
-        # lon print(rows[0][4])
-        #print(csvreader.line_num)
-        #cities.append(City(rows[0][0], rows[0][3], rows[0][4]))
 
 
 cities = []
@@ -59,6 +29,37 @@ def cityreader(cities=[]):
   # TODO Implement the functionality to read from the 'cities.csv' file
   # For each city record, create a new City instance and add it to the
   # `cities` list
+    filename = "src/cityreader/cities.csv" # will only run from inside root DIR
+
+    # initializing the titles and rows list
+    fields = []
+    rows = []
+
+    with open(filename, 'r') as csvfile:
+        # creating a csv reader object
+        csvreader = csv.reader(csvfile)
+
+        fields = next(csvreader)
+
+        for row in csvreader:
+            rows.append(row)
+
+        #print("Total no. of rows: %d"%(csvreader.line_num))
+
+        #print('Field names are:' + ', '.join(field for field in fields))
+
+        print('\nFirst rows are:\n')
+        for row in rows[:csvreader.line_num]:
+            # parsing each column of a row
+            #for col in row:
+                #print("%10s"%col),
+
+            #print('\n')
+            # print(row[0]) # city name
+            # lat print(rows[0][3])
+            # lon print(rows[0][4])
+            #print(csvreader.line_num)
+            cities.append(City(row[0], row[3], row[4]))
 
 
     return cities
@@ -67,7 +68,7 @@ cityreader(cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
 for c in cities:
-    print(c.name,c.lat,c.lon)
+    print(c.name, c.lat, c.lon)
 
 # STRETCH GOAL!
 #
