@@ -4,13 +4,15 @@
 # object is constructed.
 
 class GroundVehicle():
-    def __init__(self, num_wheels):
+    def __init__(self, num_wheels=4):
         self.num_wheels = num_wheels
-    def drive():
+    def drive(self):
         return "vroooom"
 
     # TODO
 
+#car = GroundVehicle(2)
+#print(car.drive())
 
 # Subclass Motorcycle from GroundVehicle.
 #
