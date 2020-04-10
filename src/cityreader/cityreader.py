@@ -42,14 +42,15 @@ def cityreader(cities=[]):
         fields = next(csvreader)
 
         for row in csvreader:
-            rows.append(row)
+            ####rows.append(row)
+            cities.append(City(row[0], float(row[3]), float(row[4])))
 
         #print("Total no. of rows: %d"%(csvreader.line_num))
 
         #print('Field names are:' + ', '.join(field for field in fields))
 
         # print('\nFirst rows are:\n')
-        for row in rows[:csvreader.line_num]:
+        ####for row in rows[:csvreader.line_num]:
             # parsing each column of a row
             #for col in row:
                 #print("%10s"%col),
@@ -59,7 +60,7 @@ def cityreader(cities=[]):
             # lat print(rows[0][3])
             # lon print(rows[0][4])
             #print(csvreader.line_num)
-            cities.append(City(row[0], row[3], row[4]))
+            ###cities.append(City(row[0], row[3], row[4]))
 
 
     return cities
@@ -68,7 +69,7 @@ cityreader(cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
 for c in cities:
-    print(c.name, c.lat, c.lon)
+    print(f"{c.name}, {c.lat}, {c.lon}")
 
 # STRETCH GOAL!
 #
