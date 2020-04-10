@@ -48,7 +48,7 @@ def cityreader(cities=[]):
 
         #print('Field names are:' + ', '.join(field for field in fields))
 
-        print('\nFirst rows are:\n')
+        # print('\nFirst rows are:\n')
         for row in rows[:csvreader.line_num]:
             # parsing each column of a row
             #for col in row:
