@@ -6,6 +6,8 @@
 class GroundVehicle():
     def __init__(self, num_wheels):
         self.num_wheels = num_wheels
+    def drive():
+        return "vroooom"
 
     # TODO
 
