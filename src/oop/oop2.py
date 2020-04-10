@@ -22,6 +22,9 @@ class GroundVehicle():
 # Override the drive() method in Motorcycle so that it returns "BRAAAP!!"
 
 # TODO
+class Motorcycle(GroundVehicle):
+    def drive(self):
+        return "BRAAAP!!"
 
 vehicles = [
     GroundVehicle(),
